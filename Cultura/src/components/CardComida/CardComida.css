@@ -1,0 +1,40 @@
+.card-comida{
+    display:flex;
+    flex-direction:column;
+
+    background:#fff;
+    border-radius:var(--raio);
+    overflow:hidden;
+    box-shadow:var(--sombra);
+}
+
+.card-comida-foto{
+    height:190px;
+}
+
+.card-comida-texto{
+    padding:20px 22px 24px;
+}
+
+.card-comida-origem{
+    display:block;
+    margin-bottom:4px;
+
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--verde);
+}
+
+.card-comida h3{
+    margin:0 0 8px;
+    font-size:1.35rem;
+    color:#1a1a1a;
+}
+
+.card-comida p{
+    margin:0;
+    font-size:.9rem;
+    color:var(--texto-suave);
+}

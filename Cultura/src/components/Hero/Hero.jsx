@@ -1,18 +1,21 @@
 import "./Hero.css";
-import hero from "../../assets/imagens/home/hero.jpg";
+import { imagem } from "../../imagens";
+import { irPara } from "../../router";
 
 export default function Hero() {
 
-    const irParaMapa = () => {
-        document.getElementById("mapa")?.scrollIntoView({
-            behavior: "smooth"
-        });
-    };
+    // Foto do banner: src/assets/imagens/home/hero.jpg
+    // Sem a foto, o banner usa um fundo verde.
+    const hero = imagem("home", "hero");
+
+    const fundo = hero
+        ? `url(${hero})`
+        : "linear-gradient(135deg, #14340f 0%, #2f6a1f 60%, #0f2a0b 100%)";
 
     return (
         <section
             className="hero"
-            style={{ backgroundImage: `url(${hero})` }}
+            style={{ backgroundImage: fundo }}
         >
 
             <div className="overlay"></div>
@@ -40,13 +43,9 @@ export default function Hero() {
 
                         <button
                             className="btn-amarelo"
-                            onClick={irParaMapa}
+                            onClick={() => irPara("/mapa")}
                         >
-                            Explorar o mapa →
-                        </button>
-
-                        <button className="btn-transparente">
-                            Conheça nossa história
+                            Ver mapa →
                         </button>
 
                     </div>
