@@ -10,6 +10,7 @@ html {
 
 body {
     margin: 0;
+    overflow-x: hidden;
     background: var(--creme);
     color: var(--texto);
     line-height: 1.6;
@@ -62,4 +63,10 @@ a {
 
 .link-voltar:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .pagina {
+        padding-bottom: 60px;
+    }
 }

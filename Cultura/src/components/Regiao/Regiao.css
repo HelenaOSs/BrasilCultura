@@ -115,13 +115,15 @@
 }
 
 .regiao-paragrafo{
-    max-width:820px;
-    margin:0 0 16px;
-    font-size:1.05rem;
+    max-width:920px;
+    margin:0 0 22px;
+    font-size:1.3rem;
+    line-height:1.85;
 }
 
 .regiao-estados{
-    margin:22px 0 0;
+    margin:26px 0 0;
+    font-size:1.1rem;
     color:var(--texto-suave);
 }
 
@@ -133,27 +135,50 @@
 .regiao-povos{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-    gap:18px;
+    gap:20px;
+
+    /* fundo na cor da região, para a seção não ficar toda branca */
+    padding:26px;
+    border-radius:26px;
+    background:color-mix(in srgb, var(--cor) 18%, #fff);
 }
 
 .regiao-povo{
-    padding:22px;
+    overflow:hidden;
 
     background:#fff;
     border-radius:18px;
-    border-top:5px solid var(--cor);
+    border-bottom:5px solid var(--cor);
     box-shadow:var(--sombra);
+}
+
+.regiao-povo-foto{
+    height:170px;
+}
+
+/* sem foto: fundo colorido com o emoji grande */
+.regiao-povo-foto .foto-vazia{
+    background:linear-gradient(135deg, var(--cor), color-mix(in srgb, var(--cor) 40%, #10250c));
+}
+
+.regiao-povo-foto .foto-vazia span{
+    font-size:4.2rem;
+    opacity:1;
+}
+
+.regiao-povo-corpo{
+    padding:20px 22px 22px;
 }
 
 .regiao-povo h4{
     margin:0 0 8px;
     font-family:var(--fonte-titulo);
-    font-size:1.15rem;
+    font-size:1.3rem;
 }
 
 .regiao-povo p{
     margin:0;
-    font-size:.9rem;
+    font-size:1rem;
     color:var(--texto-suave);
 }
 
@@ -163,68 +188,47 @@
     gap:26px;
 }
 
-/* ---------- Cartões de receita ---------- */
-
-.receita-card{
-    display:flex;
-    flex-direction:column;
-
-    background:#fff;
-    border-radius:var(--raio);
-    overflow:hidden;
-    box-shadow:var(--sombra);
-
-    text-decoration:none;
-    color:inherit;
-
-    transition:.3s;
-}
-
-.receita-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(0,0,0,.18);
-}
-
-.receita-card-foto{
-    height:200px;
-}
-
-.receita-card-texto{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-
-    padding:20px 22px 24px;
-}
-
-.receita-card-texto h3{
-    margin:0;
-    font-size:1.35rem;
-}
-
-.receita-card-texto p{
-    margin:0;
-    font-style:italic;
-    color:var(--texto-suave);
-}
-
-.receita-card-texto span{
-    font-size:.85rem;
-    color:var(--texto-suave);
-}
-
-.receita-card-texto strong{
-    margin-top:6px;
-    font-size:.9rem;
-    color:var(--verde-escuro);
-}
-
 @media (max-width: 720px){
+    .regiao-banner{
+        min-height:380px;
+        border-radius:22px;
+    }
+
     .regiao-banner-texto{
-        padding:30px 24px;
+        padding:28px 22px;
     }
 
     .regiao-banner-texto h2{
         font-size:2.4rem;
+    }
+
+    .regiao-banner-texto h3{
+        font-size:1.2rem;
+    }
+
+    .regiao-banner-sombra{
+        background:linear-gradient(
+            180deg,
+            rgba(0,0,0,.25) 0%,
+            rgba(0,0,0,.75) 100%
+        );
+    }
+
+    .regiao-atalhos button{
+        padding:12px 18px;
+        font-size:.95rem;
+    }
+
+    .regiao-secao{
+        margin-top:54px;
+    }
+
+    .regiao-secao > h2{
+        font-size:1.8rem;
+    }
+
+    .regiao-paragrafo{
+        font-size:1.12rem;
+        line-height:1.75;
     }
 }

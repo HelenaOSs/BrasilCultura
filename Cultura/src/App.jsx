@@ -5,7 +5,6 @@ import Hero from "./components/Hero/Hero";
 import Povos from "./components/Povos/Povos";
 import MapaBrasil from "./components/MapaBrasil/MapaBrasil";
 import Regiao from "./components/Regiao/Regiao";
-import Receita from "./components/Receita/Receita";
 import Footer from "./components/Footer/Footer";
 import { useRota } from "./router";
 
@@ -26,16 +25,15 @@ function Inicio({ rolarPara }) {
 }
 
 function App() {
-    const [pagina, regiaoId, secao, receitaSlug] = useRota();
+    const [pagina, regiaoId] = useRota();
 
     let conteudo;
 
     if (pagina === "mapa") {
         conteudo = <MapaBrasil />;
-    } else if (pagina === "regiao" && regiaoId && secao === "receita" && receitaSlug) {
-        conteudo = <Receita regiaoId={regiaoId} slug={receitaSlug} />;
     } else if (pagina === "regiao" && regiaoId) {
-        conteudo = <Regiao id={regiaoId} />;
+        // key: ao trocar de região, a página começa do zero (receita fechada)
+        conteudo = <Regiao key={regiaoId} id={regiaoId} />;
     } else {
         conteudo = <Inicio rolarPara={pagina === "historia" ? "historia" : null} />;
     }

@@ -1,9 +1,10 @@
 import "./Regiao.css";
 import regioes from "../../Data/regioes";
 import Foto from "../Foto/Foto";
-import CardComida from "../CardComida/CardComida";
+import Pratos from "../Pratos/Pratos";
+import { imagemPovo } from "../../Data/povosImagens";
 
-// Página de uma região: banner, história, povos, pratos típicos e receitas.
+// Página de uma região: banner, história, povos e pratos típicos com receitas.
 export default function Regiao({ id }) {
     const regiao = regioes.find((r) => r.id === id);
 
@@ -44,8 +45,7 @@ export default function Regiao({ id }) {
 
                     <div className="regiao-atalhos">
                         <button onClick={() => rolarPara("secao-historia")}>História</button>
-                        <button onClick={() => rolarPara("secao-pratos")}>Pratos típicos</button>
-                        <button onClick={() => rolarPara("secao-receitas")}>Receitas</button>
+                        <button onClick={() => rolarPara("secao-pratos")}>Pratos e receitas</button>
                     </div>
                 </div>
 
@@ -65,50 +65,27 @@ export default function Regiao({ id }) {
                 <h3 className="regiao-subtitulo">Quem formou essa cultura</h3>
 
                 <div className="regiao-povos">
-                    {regiao.povos.map((povo) => (
-                        <article key={povo.nome} className="regiao-povo">
-                            <h4>{povo.nome}</h4>
-                            <p>{povo.descricao}</p>
-                        </article>
-                    ))}
+                    {regiao.povos.map((povo) => {
+                        const { slug, emoji } = imagemPovo(povo.nome);
+                        return (
+                            <article key={povo.nome} className="regiao-povo">
+                                <div className="regiao-povo-foto">
+                                    <Foto pasta="povos" nome={slug} alt={povo.nome} emoji={emoji} />
+                                </div>
+                                <div className="regiao-povo-corpo">
+                                    <h4>{povo.nome}</h4>
+                                    <p>{povo.descricao}</p>
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
             </section>
 
             <section className="regiao-secao" id="secao-pratos">
-                <h2>Pratos típicos</h2>
+                <h2>Pratos típicos e receitas</h2>
 
-                <div className="regiao-grade">
-                    {regiao.comidas.map((comida) => (
-                        <CardComida key={comida.slug} comida={comida} />
-                    ))}
-                </div>
-            </section>
-
-            <section className="regiao-secao" id="secao-receitas">
-                <h2>Receitas</h2>
-
-                <div className="regiao-grade regiao-grade-receitas">
-                    {regiao.receitas.map((receita) => (
-                        <a
-                            key={receita.slug}
-                            className="receita-card"
-                            href={`#/regiao/${regiao.id}/receita/${receita.slug}`}
-                        >
-                            <div className="receita-card-foto">
-                                <Foto pasta="comidas" nome={receita.slug} alt={receita.nome} />
-                            </div>
-
-                            <div className="receita-card-texto">
-                                <h3>{receita.nome}</h3>
-                                <p>{receita.subtitulo}</p>
-                                <span>
-                                    ⏱ {receita.tempo} · {receita.dificuldade}
-                                </span>
-                                <strong>Ver receita →</strong>
-                            </div>
-                        </a>
-                    ))}
-                </div>
+                <Pratos regiao={regiao} />
             </section>
 
         </main>

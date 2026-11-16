@@ -34,3 +34,155 @@ export const rotulos = {
         "y": 684
     }
 };
+
+// Desenhos pequenos em cada região (emoji), para deixar o mapa mais vivo.
+export const icones = {
+    "norte": [
+        {
+            "e": "🌳",
+            "x": 216,
+            "y": 222,
+            "slug": "floresta"
+        },
+        {
+            "e": "🦜",
+            "x": 534,
+            "y": 372,
+            "slug": "arara"
+        },
+        {
+            "e": "🐟",
+            "x": 456,
+            "y": 96,
+            "slug": "tambaqui"
+        },
+        {
+            "e": "🌴",
+            "x": 426,
+            "y": 252,
+            "slug": "acai"
+        },
+        {
+            "e": "🌿",
+            "x": 48,
+            "y": 288,
+            "slug": "jambu"
+        }
+    ],
+    "nordeste": [
+        {
+            "e": "🌵",
+            "x": 642,
+            "y": 342,
+            "slug": "mandacaru"
+        },
+        {
+            "e": "🥥",
+            "x": 756,
+            "y": 270,
+            "slug": "coco"
+        },
+        {
+            "e": "🏖️",
+            "x": 582,
+            "y": 198,
+            "slug": "praia"
+        },
+        {
+            "e": "⛵",
+            "x": 678,
+            "y": 426,
+            "slug": "jangada"
+        },
+        {
+            "e": "🌴",
+            "x": 696,
+            "y": 288,
+            "slug": "coqueiro"
+        }
+    ],
+    "centro-oeste": [
+        {
+            "e": "🐆",
+            "x": 390,
+            "y": 396,
+            "slug": "onca"
+        },
+        {
+            "e": "🐄",
+            "x": 534,
+            "y": 420,
+            "slug": "gado"
+        },
+        {
+            "e": "🚜",
+            "x": 402,
+            "y": 576,
+            "slug": "soja"
+        },
+        {
+            "e": "🌾",
+            "x": 336,
+            "y": 306,
+            "slug": "milho"
+        }
+    ],
+    "sudeste": [
+        {
+            "e": "⛰️",
+            "x": 624,
+            "y": 498,
+            "slug": "serra"
+        },
+        {
+            "e": "🏭",
+            "x": 474,
+            "y": 558,
+            "slug": "industria"
+        },
+        {
+            "e": "☕",
+            "x": 534,
+            "y": 558,
+            "slug": "cafe"
+        },
+        {
+            "e": "🏙️",
+            "x": 558,
+            "y": 462,
+            "slug": "sao-paulo"
+        }
+    ],
+    "sul": [
+        {
+            "e": "🍇",
+            "x": 462,
+            "y": 636,
+            "slug": "uva"
+        },
+        {
+            "e": "🌲",
+            "x": 390,
+            "y": 726,
+            "slug": "araucaria"
+        },
+        {
+            "e": "🧉",
+            "x": 444,
+            "y": 738,
+            "slug": "chimarrao"
+        }
+    ]
+};
+
+// Enfeites no mar (lado do Oceano Atlântico).
+export const enfeitesMar = [
+    { e: "🐬", x: 725, y: 560, s: 34 },
+    { e: "⛵", x: 640, y: 700, s: 36 },
+    { e: "🐋", x: 735, y: 700, s: 38 },
+    { e: "🚢", x: 700, y: 785, s: 34 },
+    { e: "🌊", x: 790, y: 440, s: 28 },
+];
+
+// Linhas de referência (posição aproximada dentro do desenho).
+export const linhas = { equador: 130, tropico: 595 };

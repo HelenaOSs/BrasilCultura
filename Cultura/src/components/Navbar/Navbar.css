@@ -6,7 +6,7 @@
     justify-content:space-between;
     align-items:center;
 
-    padding:0 60px;
+    padding:0 48px;
 
     /* fica fixo no topo enquanto a página rola */
     position:sticky;
@@ -14,7 +14,7 @@
 
     z-index:1000;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
 
     backdrop-filter:blur(12px);
 }
@@ -26,10 +26,10 @@
     text-decoration:none;
 }
 
-.logo h1{
-    margin:0;
+.logo-nome{
     font-family:'Playfair Display', serif;
     font-size:2rem;
+    font-weight:700;
     color:#1B5E20;
 }
 
@@ -37,9 +37,10 @@
     font-size:2rem;
 }
 
+/* links no canto direito, maiores e em verde escuro */
 .navbar ul{
     display:flex;
-    gap:35px;
+    gap:38px;
 
     margin:0;
     padding:0;
@@ -48,40 +49,68 @@
 }
 
 .navbar nav a{
+    display:inline-block;
+    padding:8px 2px;
+
     text-decoration:none;
 
     font-family:'Poppins', sans-serif;
-
-    color:#222;
-
-    font-size:.95rem;
-
-    transition:.3s;
-}
-
-.navbar nav a:hover{
-    color:#F9A825;
-}
-
-.search{
     font-size:1.2rem;
-    cursor:pointer;
+    font-weight:600;
+
+    color:#1B5E20;
+
+    border-bottom:3px solid transparent;
+
+    transition:.25s;
+}
+
+.navbar nav a:hover,
+.navbar nav a:focus-visible{
+    color:#2E7D32;
+    border-bottom-color:#F4C542;
 }
 
 @media (max-width: 720px){
     .navbar{
-        padding:0 20px;
+        padding:0 16px;
     }
 
-    .logo h1{
+    .logo-nome{
         font-size:1.4rem;
     }
 
-    .navbar ul{
-        gap:16px;
+    .logo-icon{
+        font-size:1.5rem;
     }
 
-    .search{
+    .navbar ul{
+        gap:18px;
+    }
+
+    .navbar nav a{
+        font-size:1.05rem;
+    }
+}
+
+@media (max-width: 480px){
+    .navbar{
+        padding:0 12px;
+    }
+
+    .logo-icon{
         display:none;
+    }
+
+    .logo-nome{
+        font-size:1.25rem;
+    }
+
+    .navbar ul{
+        gap:12px;
+    }
+
+    .navbar nav a{
+        font-size:1rem;
     }
 }
