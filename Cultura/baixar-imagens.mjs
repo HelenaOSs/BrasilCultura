@@ -28,7 +28,7 @@ if (!raiz) {
 const pastaImg = path.join(raiz, "src", "assets", "imagens");
 const arquivoCreditos = path.join(raiz, "CREDITOS-IMAGENS.md");
 const PASTAS = ["comidas", "povos", "mapa"];
-const EXTENSOES = ["jpg", "jpeg", "png", "webp", "avif"];
+const EXTENSOES = ["svg","jpg", "jpeg", "png", "webp", "avif"];
 
 const povos = {
     indigenas: "Povo indígena brasileiro aldeia",
